@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('content')
+@extends('home')
+@section('home-contents')
     <div>
         <!-- Content Header (Page header) -->
         <div class="content-header">

@@ -32,13 +32,8 @@
 </head>
 <body class="hold-transition sidebar-mini">
     <div id="app">
-        <main class="py-4 wrapper">
-            @include('components.includes.navbar')
-            @include('components.includes.main-sidebar')
-            <div class="content-wrapper">
-                @yield('content')
-            </div>
-            @include('components.includes.footer')
+        <main>
+            @yield('content')
         </main>
     </div>
     {{-- fontawesome --}}
