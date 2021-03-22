@@ -50,7 +50,17 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'first_name' => ['required', 'string', 'max:255'],
+            'middle_name' => ['string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'birthday' => ['required', 'date'],
+            'city' => ['required', 'string', 'max:255'],
+            'house_number' => ['required', 'string', 'max:255'],
+            'street' => ['required', 'string', 'max:255'],
+            'province' => ['required', 'string', 'max:255'],
+            'contact_number' => ['required', 'string', 'max:255'],
+            'role' => ['required', 'string', 'max:255'],
+            'status' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -65,7 +75,17 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'first_name' => $data['first_name'],
+            'middle_name' => $data['middle_name'],
+            'last_name' => $data['last_name'],
+            'birthday' => $data['birthday'],
+            'city' => $data['city'],
+            'house_number' => $data['house_number'],
+            'street' => $data['street'],
+            'province' => $data['province'],
+            'contact_number' => $data['contact_number'],
+            'role' => $data['role'],
+            'status' => $data['status'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
