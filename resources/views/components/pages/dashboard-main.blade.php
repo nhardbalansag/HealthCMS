@@ -4,7 +4,7 @@
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
-                <div class="row mb-2">
+                <div class="mb-2 row">
                     <div class="col-sm-6">
                         <h1 class="m-0">Dashboard v3</h1>
                     </div><!-- /.col -->
@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card">
-                            <div class="card-header border-0">
+                            <div class="border-0 card-header">
                                 <div class="d-flex justify-content-between">
                                     <h3 class="card-title">Online Store Visitors</h3>
                                     <a href="javascript:void(0);">View Report</a>
@@ -33,10 +33,10 @@
                             <div class="card-body">
                                 <div class="d-flex">
                                     <p class="d-flex flex-column">
-                                    <span class="text-bold text-lg">820</span>
+                                    <span class="text-lg text-bold">820</span>
                                     <span>Visitors Over Time</span>
                                     </p>
-                                    <p class="ml-auto d-flex flex-column text-right">
+                                    <p class="ml-auto text-right d-flex flex-column">
                                     <span class="text-success">
                                         <i class="fas fa-arrow-up"></i> 12.5%
                                     </span>
@@ -45,11 +45,11 @@
                                 </div>
                                 <!-- /.d-flex -->
 
-                                <div class="position-relative mb-4">
+                                <div class="mb-4 position-relative">
                                     <canvas id="visitors-chart" height="200"></canvas>
                                 </div>
 
-                                <div class="d-flex flex-row justify-content-end">
+                                <div class="flex-row d-flex justify-content-end">
                                     <span class="mr-2">
                                     <i class="fas fa-square text-primary"></i> This Week
                                     </span>
@@ -63,7 +63,7 @@
                         <!-- /.card -->
 
                         <div class="card">
-                            <div class="card-header border-0">
+                            <div class="border-0 card-header">
                                 <h3 class="card-title">Products</h3>
                                 <div class="card-tools">
                                     <a href="#" class="btn btn-tool btn-sm">
@@ -74,7 +74,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="card-body table-responsive p-0">
+                            <div class="p-0 card-body table-responsive">
                                 <table class="table table-striped table-valign-middle">
                                     <thead>
                                         <tr>
@@ -87,12 +87,12 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                                                <img src="dist/img/default-150x150.png" alt="Product 1" class="mr-2 img-circle img-size-32">
                                                 Some Product
                                             </td>
                                             <td>$13 USD</td>
                                             <td>
-                                                <small class="text-success mr-1">
+                                                <small class="mr-1 text-success">
                                                     <i class="fas fa-arrow-up"></i>
                                                     12%
                                                 </small>
@@ -106,12 +106,12 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                                                <img src="dist/img/default-150x150.png" alt="Product 1" class="mr-2 img-circle img-size-32">
                                                 Another Product
                                             </td>
                                             <td>$29 USD</td>
                                             <td>
-                                                <small class="text-warning mr-1">
+                                                <small class="mr-1 text-warning">
                                                     <i class="fas fa-arrow-down"></i>
                                                     0.5%
                                                 </small>
@@ -125,12 +125,12 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                                                <img src="dist/img/default-150x150.png" alt="Product 1" class="mr-2 img-circle img-size-32">
                                                 Amazing Product
                                             </td>
                                             <td>$1,230 USD</td>
                                             <td>
-                                                <small class="text-danger mr-1">
+                                                <small class="mr-1 text-danger">
                                                     <i class="fas fa-arrow-down"></i>
                                                     3%
                                                 </small>
@@ -144,13 +144,13 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                                                <img src="dist/img/default-150x150.png" alt="Product 1" class="mr-2 img-circle img-size-32">
                                                 Perfect Item
                                                 <span class="badge bg-danger">NEW</span>
                                             </td>
                                             <td>$199 USD</td>
                                             <td>
-                                                <small class="text-success mr-1">
+                                                <small class="mr-1 text-success">
                                                     <i class="fas fa-arrow-up"></i>
                                                     63%
                                                 </small>
@@ -171,7 +171,7 @@
                     <!-- /.col-md-6 -->
                     <div class="col-lg-6">
                         <div class="card">
-                            <div class="card-header border-0">
+                            <div class="border-0 card-header">
                                 <div class="d-flex justify-content-between">
                                     <h3 class="card-title">Sales</h3>
                                     <a href="javascript:void(0);">View Report</a>
@@ -180,10 +180,10 @@
                             <div class="card-body">
                                 <div class="d-flex">
                                     <p class="d-flex flex-column">
-                                        <span class="text-bold text-lg">$18,230.00</span>
+                                        <span class="text-lg text-bold">$18,230.00</span>
                                         <span>Sales Over Time</span>
                                     </p>
-                                    <p class="ml-auto d-flex flex-column text-right">
+                                    <p class="ml-auto text-right d-flex flex-column">
                                         <span class="text-success">
                                             <i class="fas fa-arrow-up"></i> 33.1%
                                         </span>
@@ -192,11 +192,11 @@
                                 </div>
                                 <!-- /.d-flex -->
 
-                                <div class="position-relative mb-4">
+                                <div class="mb-4 position-relative">
                                     <canvas id="sales-chart" height="200"></canvas>
                                 </div>
 
-                                <div class="d-flex flex-row justify-content-end">
+                                <div class="flex-row d-flex justify-content-end">
                                     <span class="mr-2">
                                     <i class="fas fa-square text-primary"></i> This year
                                     </span>
@@ -210,7 +210,7 @@
                         <!-- /.card -->
 
                         <div class="card">
-                            <div class="card-header border-0">
+                            <div class="border-0 card-header">
                                 <h3 class="card-title">Online Store Overview</h3>
                                 <div class="card-tools">
                                     <a href="#" class="btn btn-sm btn-tool">
@@ -222,11 +222,11 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                                    <p class="text-success text-xl">
+                                <div class="mb-3 d-flex justify-content-between align-items-center border-bottom">
+                                    <p class="text-xl text-success">
                                         <i class="ion ion-ios-refresh-empty"></i>
                                     </p>
-                                    <p class="d-flex flex-column text-right">
+                                    <p class="text-right d-flex flex-column">
                                         <span class="font-weight-bold">
                                             <i class="ion ion-android-arrow-up text-success"></i> 12%
                                         </span>
@@ -234,11 +234,11 @@
                                     </p>
                                 </div>
                                 <!-- /.d-flex -->
-                                <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                                    <p class="text-warning text-xl">
+                                <div class="mb-3 d-flex justify-content-between align-items-center border-bottom">
+                                    <p class="text-xl text-warning">
                                         <i class="ion ion-ios-cart-outline"></i>
                                     </p>
-                                    <p class="d-flex flex-column text-right">
+                                    <p class="text-right d-flex flex-column">
                                         <span class="font-weight-bold">
                                             <i class="ion ion-android-arrow-up text-warning"></i> 0.8%
                                         </span>
@@ -246,11 +246,11 @@
                                     </p>
                                 </div>
                                 <!-- /.d-flex -->
-                                <div class="d-flex justify-content-between align-items-center mb-0">
-                                    <p class="text-danger text-xl">
+                                <div class="mb-0 d-flex justify-content-between align-items-center">
+                                    <p class="text-xl text-danger">
                                     <i class="ion ion-ios-people-outline"></i>
                                     </p>
-                                    <p class="d-flex flex-column text-right">
+                                    <p class="text-right d-flex flex-column">
                                         <span class="font-weight-bold">
                                             <i class="ion ion-android-arrow-down text-danger"></i> 1%
                                         </span>
