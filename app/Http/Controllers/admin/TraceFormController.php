@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class TraceFormController extends Controller
 {
-    //
+    public function index(){
+        return view('components.pages.add-trace-form');
+    }
 }

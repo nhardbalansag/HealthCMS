@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\RouteController;
+use App\Http\Controllers\admin\{RouteController, TraceFormCategoryController, TraceFormController};
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +25,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware('auth')->group(function(){
     Route::prefix('admin')->group(function () {
         Route::get('dashboard-main', [RouteController::class, 'index'])->name('dashboard-main');
-        Route::get('dashboard-main', [RouteController::class, 'index']);
+        Route::get('trace-category', [TraceFormCategoryController::class, 'index'])->name('trace-category');
+        Route::get('view-add-form-trace-category', [TraceFormCategoryController::class, 'View_AddFormCategory'])->name('view-add-form-trace-category');
+
+        Route::get('view-add-form-trace', [TraceFormController::class, 'index'])->name('view-add-form-trace');
     });
 });
