@@ -8,6 +8,7 @@ use App\CMS\Query\AdminQueryBuilder;
 
 class TraceFormCategoryController extends Controller
 {
+
     public function index(){
         $data['categories'] = AdminQueryBuilder::getAll('trace_form_category_models');
 
@@ -17,4 +18,5 @@ class TraceFormCategoryController extends Controller
     public function View_AddFormCategory(){
         return view('components.pages.add-trace-form-categories');
     }
+
 }

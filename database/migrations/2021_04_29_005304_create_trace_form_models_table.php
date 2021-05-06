@@ -18,7 +18,6 @@ class CreateTraceFormModelsTable extends Migration
             $table->integer('trace_form_order_number');
             $table->string('trace_form_question');
             $table->string('trace_form_description');
-            $table->string('trace_form_status');
             $table->string('trace_form_input_type');
             $table->integer('trace_form_category_fkid')->unsigned();;
             $table->foreign('trace_form_category_fkid')

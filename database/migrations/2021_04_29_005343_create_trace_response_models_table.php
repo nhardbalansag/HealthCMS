@@ -23,17 +23,10 @@ class CreateTraceResponseModelsTable extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
 
-            $table->integer('trace_form_choices_fkid')->unsigned();;
-            $table->foreign('trace_form_choices_fkid')
+            $table->integer('trace_q_a_s_fkid')->unsigned();;
+            $table->foreign('trace_q_a_s_fkid')
             ->references('id')
-            ->on('trace_form_choices_models')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-
-            $table->integer('trace_form_fkid')->unsigned();;
-            $table->foreign('trace_form_fkid')
-            ->references('id')
-            ->on('trace_form_models')
+            ->on('trace_q_a_s')
             ->onDelete('cascade')
             ->onUpdate('cascade');
 

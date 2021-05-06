@@ -18,7 +18,7 @@ class CreateTraceFormCategoryModelsTable extends Migration
             $table->string('trace_form_category_name');
             $table->string('trace_form_category_description');
             $table->string('trace_form_category_status');
-            $table->integer('trace_form_category_edit_count');
+            $table->integer('trace_form_category_edit_count')->nullable();
             $table->timestamps();
         });
     }

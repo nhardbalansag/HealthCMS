@@ -67,19 +67,6 @@
     </head>
     <body>
         <div class="bg-dark flex-center posi tion-ref full-height">
-            {{-- @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-white">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-white">Login</a>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="text-white">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif --}}
-
             <div class="container row col-md-12 col-12">
                 <div class="col-12 col-md-6 ">
                     <p class="text-center text-white title m-b-md">

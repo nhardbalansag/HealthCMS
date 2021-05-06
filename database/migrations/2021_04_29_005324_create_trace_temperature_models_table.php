@@ -15,7 +15,7 @@ class CreateTraceTemperatureModelsTable extends Migration
     {
         Schema::create('trace_temperature_models', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('trace_temperature_temp');
+            $table->double('trace_temperature_temp', 8, 2);
             $table->integer('user_information_fkid')->unsigned();;
             $table->foreign('user_information_fkid')
             ->references('id')

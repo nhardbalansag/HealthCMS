@@ -16,8 +16,7 @@ class CreateTraceFormChoicesModelsTable extends Migration
         Schema::create('trace_form_choices_models', function (Blueprint $table) {
             $table->increments('id');
             $table->string('trace_form_choices_title');
-            $table->string('trace_form_choices_status');
-            $table->integer('trace_form_choices_edit_count');
+            $table->integer('trace_form_choices_edit_count')->nullable();
             $table->timestamps();
         });
     }

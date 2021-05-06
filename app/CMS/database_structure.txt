@@ -1,4 +1,3 @@
-
 - user_information
     email
     password
@@ -25,23 +24,26 @@
 
 - trace_form_choices
     trace_form_choices_title
-    trace_form_choices_status
     trace_form_choices_edit_count
 
 - trace_form
     trace_form_order_number
     trace_form_question
     trace_form_description
-    trace_form_status
     trace_form_edit_count
-    trace_form_category_fkid - (fk)
+
+- trace_q_a_s
     trace_form_choices_fkid - (fk)
+    trace_form_fkid - (fk)
+    trace_form_category_fkid - (fk)
+    trace_form_question_and_choice_status
 
 - trace_temperature
     trace_temperature_temp
     user_information_fkid
 
 - trace_response
-    trace_form_fkid - (fk)
+    trace_form_question_and_choice_fkid - (fk)
     user_information_fkid - (fk)
-    trace_form_choices_fkid - (fk)
+
+
