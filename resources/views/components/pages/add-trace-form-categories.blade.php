@@ -23,26 +23,29 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="inputName">Form Category Name</label>
-                            <input type="text" id="inputName" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputDescription">Form Category Description</label>
-                            <textarea id="inputDescription" class="form-control" rows="4"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputStatus">Status</label>
-                            <select id="inputStatus" class="form-control custom-select">
-                                <option selected="" disabled="">Select one</option>
-                                <option>Active</option>
-                                <option>Pending</option>
-                                <option>Inactive</option>
-                            </select>
-                        </div>
-                        <div>
-                            <input type="submit" value="Create new Category" class="float-right btn btn-success">
-                        </div>
+                        <form action="{{ route('create-add-form-trace-category') }}" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="inputName">Form Category Name</label>
+                                <input name="trace_form_category_name" type="text" id="inputName" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescription">Form Category Description</label>
+                                <textarea name="trace_form_category_description"  id="inputDescription" class="form-control" rows="4"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputStatus">Status</label>
+                                <select name="trace_form_category_status"  id="inputStatus" class="form-control custom-select">
+                                    <option selected="" disabled="">Select one</option>
+                                    <option value='active'>Active</option>
+                                    <option value='pending'>Pending</option>
+                                    <option value='inactive'>Inactive</option>
+                                </select>
+                            </div>
+                            <div>
+                                <input type="submit" value="Create new Category" class="float-right btn btn-primary">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

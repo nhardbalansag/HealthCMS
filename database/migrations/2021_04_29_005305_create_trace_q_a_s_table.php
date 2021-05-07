@@ -16,7 +16,7 @@ class CreateTraceQASTable extends Migration
         Schema::create('trace_q_a_s', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('trace_form_choices_fkid')->unsigned();
+            $table->integer('trace_form_choices_fkid')->unsigned()->nullable();
             $table->foreign('trace_form_choices_fkid')
             ->references('id')
             ->on('trace_form_choices_models')
@@ -37,7 +37,7 @@ class CreateTraceQASTable extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
 
-            $table->string('trace_form_question_and_choices_status');
+            $table->string('trace_form_question_and_choices_status')->nullable();
             $table->timestamps();
         });
     }

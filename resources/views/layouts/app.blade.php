@@ -33,6 +33,8 @@
         <!-- Theme style -->
         <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
 
+        @livewireStyles
+
     {{-- admin lte end --}}
 </head>
 <body class="hold-transition sidebar-mini">
@@ -73,6 +75,8 @@
         <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
         <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     {{-- end admin lte scripts --}}
+
+    @livewireScripts
 
     @stack('custom-scripts')
 
