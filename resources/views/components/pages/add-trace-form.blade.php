@@ -5,70 +5,24 @@
             <div class="container-fluid">
                 <div class="mb-2 row">
                     <div class="col-sm-6">
-                        <h1 class="m-0"><i class="far fa-file-alt text-primary"></i> Trace Form Category Title</h1>
+                        <h1 class="m-0"><i class="far fa-file-alt text-primary"></i> {{ $categoryForm->trace_form_category_name }}</h1>
                     </div>
                 </div>
             </div>
         </div>
         <div class="content">
             <div class="container-fluid">
-                <div class="card card-info">
-                    <div class="card-header">
-                        <h3 class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis iusto delectus cumque quisquam possimus autem neque quis similique atque, nam eius ratione, facere fugiat accusamus vero consectetur quos quae magni.</h3>
-                    </div>
-                    <div class="card-body">
-                        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
-                                        <thead>
-                                            <tr role="row">
-                                                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
-                                                    Option Title
-                                                </th>
-                                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                    Action
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        {{-- @forelse($categories as $key => $value) --}}
-                                            <tr role="row" class="even">
-                                                <td>Example choice</td>
-                                                <td>
-                                                    <div>
-                                                        <a class="btn btn-outline-primary" href="" role="button"><i class="fas fa-edit"></i></a>
-                                                        <a class="btn btn-outline-danger" href="{{ route('view-add-form-trace') }}" role="button"><i class="fas fa-trash"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        {{-- @empty
-                                        @endforelse --}}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                @forelse($formQuestion as $key => $value)
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="card-title"><span class="font-weight-bold">Section {{ ++$key }}. </span> {{ $value->trace_form_question }}</h3>
                         </div>
-                        <div class="col-12 col-md-8 row">
-                            <div class="form-group col-12">
-                                <label for="inputName">Option</label>
-                                <input type="text" id="inputName" class="form-control" placeholder="Add Option">
-                            </div>
-                            <div class="form-group col-12">
-                                <label for="inputStatus">Status</label>
-                                <select id="inputStatus" class="form-control custom-select">
-                                    <option selected="" disabled="">Select one</option>
-                                    <option>Active</option>
-                                    <option>Pending</option>
-                                    <option>Inactive</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-12">
-                                <button type="button" class="btn btn-info">Create Option</button>
-                            </div>
+                        <div class="card-body">
+                            @livewire('create-options', ['formCategory' => $_GET['form_category_id'], 'formId' => $value->id])
                         </div>
                     </div>
-                </div>
+                @empty
+                @endforelse
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Create Question</h3>
@@ -80,27 +34,30 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="inputName">Question</label>
-                            <input type="text" id="inputName" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputDescription">Description</label>
-                            <textarea id="inputDescription" class="form-control" rows="4"></textarea>
-                        </div>
-                        <div class="col-12 row">
-                            <div class="form-group col-12 col-md-6">
-                                <label for="inputStatus">Input Type</label>
-                                <select id="inputStatus" class="form-control custom-select">
-                                    <option selected="" disabled="">Select one</option>
-                                    <option>Radio</option>
-                                    <option>CheckBox</option>
-                                </select>
+                        <form action="{{ route('create-add-form-trace', ["form_category_id" => $_GET['form_category_id']]) }}" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="inputName">Question</label>
+                                <input name="trace_form_question" type="text" id="inputName" class="form-control">
                             </div>
-                        </div>
-                        <div>
-                            <input type="submit" value="Create Question" class="float-right btn btn-primary">
-                        </div>
+                            <div class="form-group">
+                                <label for="inputDescription">Description</label>
+                                <textarea name="trace_form_description" id="inputDescription" class="form-control" rows="4"></textarea>
+                            </div>
+                            <div class="col-12 row">
+                                <div class="form-group col-12 col-md-6">
+                                    <label for="inputStatus">Input Type</label>
+                                    <select name="trace_form_input_type" id="inputStatus" class="form-control custom-select">
+                                        <option selected="" disabled="">Select one</option>
+                                        <option value="radio">Radio</option>
+                                        <option value="checkbox">CheckBox</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="submit" value="Create Question" class="float-right btn btn-primary">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

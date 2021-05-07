@@ -15,7 +15,6 @@ class CreateTraceFormModelsTable extends Migration
     {
         Schema::create('trace_form_models', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('trace_form_order_number');
             $table->string('trace_form_question');
             $table->string('trace_form_description');
             $table->string('trace_form_input_type');
@@ -23,12 +22,6 @@ class CreateTraceFormModelsTable extends Migration
             $table->foreign('trace_form_category_fkid')
             ->references('id')
             ->on('trace_form_category_models')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-            $table->integer('trace_form_choices_fkid')->unsigned();;
-            $table->foreign('trace_form_choices_fkid')
-            ->references('id')
-            ->on('trace_form_choices_models')
             ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->timestamps();
