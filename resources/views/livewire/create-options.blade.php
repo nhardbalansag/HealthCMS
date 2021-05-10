@@ -44,27 +44,29 @@
             </div>
         </div>
     </div>
-    <div class="col-12 col-md-8 row">
-        <div class="form-group col-12">
-            <label for="inputName">Option</label>
-            <input wire:model.defer='trace_form_choices_title' type="text" id="inputName" class="form-control" placeholder="Add Option">
+    @if(Route::currentRouteName() !== 'view-form-trace')
+        <div class="col-12 col-md-8 row">
+            <div class="form-group col-12">
+                <label for="inputName">Option</label>
+                <input wire:model.defer='trace_form_choices_title' type="text" id="inputName" class="form-control" placeholder="Add Option">
+            </div>
+            <div class="form-group col-12">
+                <label for="inputStatus">Status</label>
+                <select wire:model.defer='trace_form_question_and_choices_status' id="inputStatus" class="form-control custom-select">
+                    <option selected="">Select one</option>
+                    <option value="active">Active</option>
+                    <option value="pending">Pending</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+            </div>
+            <div class="form-group col-12">
+                <button wire:click='createOptions' type="button" class="btn btn-info">Create Option</button>
+            </div>
         </div>
-        <div class="form-group col-12">
-            <label for="inputStatus">Status</label>
-            <select wire:model.defer='trace_form_question_and_choices_status' id="inputStatus" class="form-control custom-select">
-                <option selected="">Select one</option>
-                <option value="active">Active</option>
-                <option value="pending">Pending</option>
-                <option value="inactive">Inactive</option>
-            </select>
+        <div wire:loading>
+            @include('components.includes.loading-state')
         </div>
-        <div class="form-group col-12">
-            <button wire:click='createOptions' type="button" class="btn btn-info">Create Option</button>
-        </div>
-    </div>
-    <div wire:loading>
-        @include('components.includes.loading-state')
-    </div>
+    @endif
 </div>
 <script>
     function editOption(id){
