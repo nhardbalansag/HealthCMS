@@ -19,17 +19,27 @@ class CreateOptions extends Component
 
     public function createOptions(){
 
-        $choiceData = AdminQueryBuilder::create_options($this->trace_form_choices_title);
+        if(
+            $this->formCategory &&
+            $this->trace_form_question_and_choices_status &&
+            $this->formCategory &&
+            $this->formId
+        ){
+            if($choiceData = AdminQueryBuilder::create_options($this->trace_form_choices_title)){
 
-        $choice = array(
-            'formCategory' => $this->formCategory,
-            'trace_form_question_and_choices_status' => $this->trace_form_question_and_choices_status,
-            'trace_form_category_fkid' => $this->formCategory,
-            'trace_form_fkid' => $this->formId,
-            'trace_form_choices_fkid' => $choiceData->id
-        );
+                $choice = array(
+                    'formCategory' => $this->formCategory,
+                    'trace_form_question_and_choices_status' => $this->trace_form_question_and_choices_status,
+                    'trace_form_category_fkid' => $this->formCategory,
+                    'trace_form_fkid' => $this->formId,
+                    'trace_form_choices_fkid' => $choiceData->id
+                );
 
-        $data = AdminQueryBuilder::create_trace_q_a_s($choice);
+                $data = AdminQueryBuilder::create_trace_q_a_s($choice);
+            }
 
+            $this->trace_form_question_and_choices_status = null;
+            $this->trace_form_choices_title = null;
+        }
     }
 }
