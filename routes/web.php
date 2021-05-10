@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\{RouteController, TraceFormCategoryController, TraceFormController};
+use App\Http\Controllers\admin\{RouteController, TraceFormCategoryController, TraceFormController, TraceFormChoicesController};
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +30,10 @@ Route::middleware('auth')->group(function(){
         Route::post('create-add-form-trace-category', [TraceFormCategoryController::class, 'Create_AddFormCategory'])->name('create-add-form-trace-category');
 
         Route::get('view-add-form-trace', [TraceFormController::class, 'index'])->name('view-add-form-trace');
+        Route::get('view-form-trace', [TraceFormController::class, 'index'])->name('view-form-trace');
         Route::post('create-add-form-trace', [TraceFormController::class, 'create_FormQuestion'])->name('create-add-form-trace');
+
+        Route::get('delete-options', [TraceFormChoicesController::class, 'deleteOption'])->name('delete-options');
+        Route::post('edit-options', [TraceFormChoicesController::class, 'editOption'])->name('edit-options');
     });
 });

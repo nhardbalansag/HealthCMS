@@ -89,4 +89,13 @@ class AdminQueryBuilder extends Model
 
         return $data;
     }
+
+    public static function editData($model, $whereid, $column, $request){
+        $data = DB::table($model)
+                ->where('id', $whereid)
+                ->update(
+                    [
+                        $column => $request['optionTitle']
+                    ]);
+    }
 }
