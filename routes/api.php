@@ -21,6 +21,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/test-connection', [UserController::class, 'testindex']);
 
+
+Route::post('/register-user', [UserController::class, 'registerUser']);
+Route::post('/login-user', [UserController::class, 'loginUser']);
+
 Route::group(['middleware' => 'auth:api'], function() {
     Route::get('/get-all-response-status', [UserController::class, 'responseStatus']);
 });
