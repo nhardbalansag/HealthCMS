@@ -47,7 +47,7 @@ class UserController extends Controller
 
             return response()->json($dataresponse, 200, [], JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
 
-       }else if($validator->fails()){
+        }else if($validator->fails()){
 
             $dataresponse = array(
                 "token" =>null,
@@ -57,7 +57,7 @@ class UserController extends Controller
 
             return response()->json($dataresponse, 200, [], JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
 
-       }
+        }
     }
 }
 
