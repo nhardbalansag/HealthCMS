@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\{RouteController, TraceFormCategoryController, TraceFormController, TraceFormChoicesController};
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\user\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,11 +22,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware('auth')->group(function(){
+    Route::get('/home', 'HomeController@index')->name('home');
 
     Route::middleware('UserRoleAuthenticate:admin')->group(function(){
-
-        Route::get('/home', 'HomeController@index')->name('home');
-
         Route::prefix('admin')->group(function () {
             Route::get('dashboard-main', [RouteController::class, 'index'])->name('dashboard-main');
             Route::get('trace-category', [TraceFormCategoryController::class, 'index'])->name('trace-category');
@@ -43,7 +42,7 @@ Route::middleware('auth')->group(function(){
 
     Route::middleware('UserRoleAuthenticate:user')->group(function(){
         Route::prefix('user')->group(function () {
-
+            Route::get('home', [UserController::class, 'index'])->name('user-home-index');
         });
     });
 

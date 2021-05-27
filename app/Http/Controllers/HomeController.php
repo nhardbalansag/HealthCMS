@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,6 +26,14 @@ class HomeController extends Controller
     public function index()
     {
         // return view('home');
-        return view('components.pages.dashboard-main');
+
+
+        if(Auth::user()->user_type === "admin"){
+            return view('components.pages.dashboard-main');
+        }else if(Auth::user()->user_type === "user"){
+            return redirect()->route('user-home-index');
+        }else{
+            abort(403, 'Unauthorized');
+        }
     }
 }
